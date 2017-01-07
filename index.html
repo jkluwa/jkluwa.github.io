@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body
+{
+  background-color: #202020;
+}
+#enemy
+{
+  position: absolute;
+  top: 200px;
+  left: 900px;
+}
+#img
+{
+  position: absolute;
+  top: 200px;
+left: 150px;
+}
+#btn
+{
+  position: absolute;
+  left: 163px;
+  top: 300px;
+}
+#hp
+{
+  font-size: 20px;
+  color: #ff2323;
+  position: absolute;
+
+}
+#mana
+{
+  font-size: 20px;
+  color: #2323ff;
+  position: absolute;
+  left: 48px;
+
+}
+#stats
+{
+  position: absolute;
+  background-color: #98bfbf;
+  width: 82px;
+  height: 25px;
+  left: 150px;
+  top: 170px;
+}
+#e_hp
+{
+  font-size: 20px;
+  color: #ff2323;
+}
+</style>
+</head>
+<body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="game">
+  <div id="plr">
+  <div id="img">  <img src="plr.png"></img> </div>
+<div id="btn"><button v-on:click="randomLetter()">Attack</button></div>
+<div id="stats"><div id="hp"><p>{{ hp }}</p></div> <div id="mana">{{ mana }}</div></div>
+  </div>
+  <div id="enemy">
+    <div id="e_hp">{{ enemy_hp }}</div>
+<img src="enemy.png"></img>
+  </div></div>
+<script>
+var game = new Vue({
+  el: '#game',
+data: {
+      hp: 100,
+  mana: 100,
+    enemy_hp: 100
+  },
+  methods: {
+ randomLetter: function () {
+   attack: Math.floor(Math.random()*10 +1)
+    enemy_attack: Math.floor(Math.random()* 10 + 1)
+ }
+}
+})
+</script>
+</body>
+</html>
